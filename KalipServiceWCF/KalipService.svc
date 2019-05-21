@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="KalipServiceWCF.Service1" CodeBehind="KalipService.svc.cs" %>

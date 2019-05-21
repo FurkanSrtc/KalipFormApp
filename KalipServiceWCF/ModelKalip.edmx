@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KalipDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Numune">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumuneAdi" Type="varchar" MaxLength="200" />
+          <Property Name="UrunKodu" Type="int" />
+          <Property Name="KalipKodu" Type="int" />
+          <Property Name="Adet" Type="int" />
+          <Property Name="Tarih" Type="date" />
+        </EntityType>
+        <EntityType Name="Uye">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="prcPieChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pBaslangic" Type="date" Mode="In" />
+          <Parameter Name="pBitis" Type="date" Mode="In" />
+          <Parameter Name="pUrunKodu" Type="int" Mode="In" />
+          <Parameter Name="pKalipKodu" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcPieChartOnlyDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pBaslangic" Type="date" Mode="In" />
+          <Parameter Name="pBitis" Type="date" Mode="In" />
+        </Function>
+        <EntityContainer Name="KalipDBModelStoreContainer">
+          <EntitySet Name="Numune" EntityType="Self.Numune" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uye" EntityType="Self.Uye" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KalipDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="KalipDBEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="procPieChart" ReturnType="Collection(KalipDBModel.procPieChart_Result)">
+            <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
+            <Parameter Name="pBitis" Mode="In" Type="DateTime" />
+            <Parameter Name="pUrunKodu" Mode="In" Type="Int32" />
+            <Parameter Name="pKalipKodu" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="procPieChartOnlyDate" ReturnType="Collection(KalipDBModel.procPieChartOnlyDate_Result)">
+            <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
+            <Parameter Name="pBitis" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="Numune" EntityType="KalipDBModel.Numune" />
+          <EntitySet Name="Uye" EntityType="KalipDBModel.Uye" />
+          <FunctionImport Name="prcPieChart" ReturnType="Collection(KalipDBModel.prcPieChart_Result)">
+            <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
+            <Parameter Name="pBitis" Mode="In" Type="DateTime" />
+            <Parameter Name="pUrunKodu" Mode="In" Type="Int32" />
+            <Parameter Name="pKalipKodu" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcPieChartOnlyDate" ReturnType="Collection(KalipDBModel.prcPieChartOnlyDate_Result)">
+            <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
+            <Parameter Name="pBitis" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="procPieChart_Result">
+          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="procPieChartOnlyDate_Result">
+          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Numune">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumuneAdi" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UrunKodu" Type="Int32" />
+          <Property Name="KalipKodu" Type="Int32" />
+          <Property Name="Adet" Type="Int32" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Uye">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="prcPieChart_Result">
+          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="prcPieChartOnlyDate_Result">
+          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KalipDBModelStoreContainer" CdmEntityContainer="KalipDBEntities">
+          <EntitySetMapping Name="Numune">
+            <EntityTypeMapping TypeName="KalipDBModel.Numune">
+              <MappingFragment StoreEntitySet="Numune">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+                <ScalarProperty Name="KalipKodu" ColumnName="KalipKodu" />
+                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+                <ScalarProperty Name="NumuneAdi" ColumnName="NumuneAdi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uye">
+            <EntityTypeMapping TypeName="KalipDBModel.Uye">
+              <MappingFragment StoreEntitySet="Uye">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="prcPieChart" FunctionName="KalipDBModel.Store.prcPieChart">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KalipDBModel.prcPieChart_Result">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prcPieChartOnlyDate" FunctionName="KalipDBModel.Store.prcPieChartOnlyDate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KalipDBModel.prcPieChartOnlyDate_Result">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

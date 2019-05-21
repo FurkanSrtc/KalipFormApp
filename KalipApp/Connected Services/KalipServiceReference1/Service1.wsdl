@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:63650/KalipService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:63650/KalipService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:63650/KalipService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/KalipServiceWCF" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKalipService_getAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAll" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_getAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Find_InputMessage">
+    <wsdl:part name="parameters" element="tns:Find" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Find_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_FindUrunKod_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUrunKod" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_FindUrunKod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUrunKodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Edit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Edit" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_FindByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByDate" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_FindByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_PieChartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PieChartDate" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_PieChartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PieChartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_PieChart_InputMessage">
+    <wsdl:part name="parameters" element="tns:PieChart" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_PieChart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PieChartResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IKalipService">
+    <wsdl:operation name="getAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/getAll" message="tns:IKalipService_getAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/getAllResponse" message="tns:IKalipService_getAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/GetUser" message="tns:IKalipService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/GetUserResponse" message="tns:IKalipService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/Find" message="tns:IKalipService_Find_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/FindResponse" message="tns:IKalipService_Find_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUrunKod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/FindUrunKod" message="tns:IKalipService_FindUrunKod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/FindUrunKodResponse" message="tns:IKalipService_FindUrunKod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/Add" message="tns:IKalipService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/AddResponse" message="tns:IKalipService_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/Edit" message="tns:IKalipService_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/EditResponse" message="tns:IKalipService_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/Delete" message="tns:IKalipService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/DeleteResponse" message="tns:IKalipService_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/FindByDate" message="tns:IKalipService_FindByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/FindByDateResponse" message="tns:IKalipService_FindByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PieChartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/PieChartDate" message="tns:IKalipService_PieChartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/PieChartDateResponse" message="tns:IKalipService_PieChartDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PieChart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/PieChart" message="tns:IKalipService_PieChart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/PieChartResponse" message="tns:IKalipService_PieChart_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IKalipService" type="tns:IKalipService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAll">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/getAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/Find" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUrunKod">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/FindUrunKod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindByDate">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/FindByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PieChartDate">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/PieChartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PieChart">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/PieChart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IKalipService" binding="tns:BasicHttpBinding_IKalipService">
+      <soap:address location="http://localhost:63650/KalipService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

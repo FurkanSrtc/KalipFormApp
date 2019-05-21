@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalipServiceWCF", "KalipServiceWCF\KalipServiceWCF.csproj", "{9B5540FF-0F4D-4CF3-9E02-DB5EE5D8DFA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalipApp", "KalipApp\KalipApp.csproj", "{A8D1505D-4B4F-4271-A1FF-6A604587D099}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9B5540FF-0F4D-4CF3-9E02-DB5EE5D8DFA5} = {9B5540FF-0F4D-4CF3-9E02-DB5EE5D8DFA5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B5540FF-0F4D-4CF3-9E02-DB5EE5D8DFA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5540FF-0F4D-4CF3-9E02-DB5EE5D8DFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5540FF-0F4D-4CF3-9E02-DB5EE5D8DFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5540FF-0F4D-4CF3-9E02-DB5EE5D8DFA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8D1505D-4B4F-4271-A1FF-6A604587D099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D1505D-4B4F-4271-A1FF-6A604587D099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D1505D-4B4F-4271-A1FF-6A604587D099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D1505D-4B4F-4271-A1FF-6A604587D099}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38AA98C2-1A61-4DE0-B7ED-FF3764E3BFD4}
+	EndGlobalSection
+EndGlobal
