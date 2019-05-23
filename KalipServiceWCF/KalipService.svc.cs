@@ -169,5 +169,10 @@ namespace KalipServiceWCF
             return db.NumuneDetay.Where(x => x.UrunKodu == urunkodu && x.KalipKodu == kalipKodu).FirstOrDefault();
 
         }
+
+        public List<NumuneTariheGoreSatisOranları_Result> procAylikSatisOrani(string baslangic, string bitis)
+        {
+            return db.NumuneTariheGoreSatisOranları(Convert.ToDateTime(baslangic), Convert.ToDateTime(bitis)).ToList();
+        }
     }
 }

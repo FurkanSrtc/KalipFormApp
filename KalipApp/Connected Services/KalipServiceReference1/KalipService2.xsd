@@ -190,4 +190,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="procAylikSatisOrani">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="baslangic" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bitis" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="procAylikSatisOraniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/KalipServiceWCF" minOccurs="0" name="procAylikSatisOraniResult" nillable="true" type="q12:ArrayOfNumuneTariheGoreSatisOranları_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

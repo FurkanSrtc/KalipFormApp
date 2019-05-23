@@ -57,7 +57,13 @@ namespace KalipServiceWCF
 
         [OperationContract]
         NumuneDetay FindDetail(int urunkodu, int parcakodu);
-        
+
+
+        [OperationContract]
+        List<NumuneTariheGoreSatisOranları_Result> procAylikSatisOrani (string baslangic, string bitis);
+
+
+
     }
 
 

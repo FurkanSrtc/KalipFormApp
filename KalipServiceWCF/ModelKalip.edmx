@@ -42,6 +42,10 @@
           <Property Name="UserName" Type="varchar" MaxLength="50" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
         </EntityType>
+        <Function Name="NumuneTariheGoreSatisOranları" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pBaslangic" Type="date" Mode="In" />
+          <Parameter Name="pBitis" Type="date" Mode="In" />
+        </Function>
         <Function Name="prcPieChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pBaslangic" Type="date" Mode="In" />
           <Parameter Name="pBitis" Type="date" Mode="In" />
@@ -85,6 +89,10 @@
           <EntitySet Name="Numune" EntityType="KalipDBModel.Numune" />
           <EntitySet Name="Uye" EntityType="KalipDBModel.Uye" />
           <EntitySet Name="NumuneDetay" EntityType="KalipDBModel.NumuneDetay" />
+          <FunctionImport Name="NumuneTariheGoreSatisOranları" ReturnType="Collection(KalipDBModel.NumuneTariheGoreSatisOranları_Result)">
+            <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
+            <Parameter Name="pBitis" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="procPieChart_Result">
           <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
@@ -139,6 +147,11 @@
           <Property Name="ParcaAgirligi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="ResimURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="NumuneTariheGoreSatisOranları_Result">
+          <Property Type="String" Name="NumuneAdi" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -201,6 +214,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="NumuneTariheGoreSatisOranları" FunctionName="KalipDBModel.Store.NumuneTariheGoreSatisOranları">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KalipDBModel.NumuneTariheGoreSatisOranları_Result">
+                <ScalarProperty Name="NumuneAdi" ColumnName="NumuneAdi" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

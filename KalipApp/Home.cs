@@ -155,18 +155,18 @@ namespace KalipApp
         Func<ChartPoint, string> labelpoint = chartpoint => string.Format("{0} ({1:P})", chartpoint.Y, chartpoint.Participation);
         private void ambiance_Button_22_Click(object sender, EventArgs e)
         {
+            ambiance_TabControl2.SelectedIndex = 0;
 
-     
 
             if (String.IsNullOrEmpty(txtParca.Text) || String.IsNullOrEmpty(txtKalip.Text))
             {
-             var a = kalipService.PieChartDate(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString());
+             var a = kalipService.procAylikSatisOrani(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString());
 
                 LiveCharts.SeriesCollection series = new LiveCharts.SeriesCollection();
 
                 foreach (var obj in a)
                 {
-                    series.Add(new PieSeries() { Title = Convert.ToDateTime(obj.Tarih.ToString()).ToShortDateString(), Values = new ChartValues<int> { Convert.ToInt32(obj.Adet) }, DataLabels = true, LabelPoint = labelpoint });
+                    series.Add(new PieSeries() { Title = obj.NumuneAdi+" "+Convert.ToDateTime(obj.Tarih.ToString()).ToShortDateString(), Values = new ChartValues<int> { Convert.ToInt32(obj.Adet) }, DataLabels = true, LabelPoint = labelpoint });
                     pieChart1.Series = series;
                 }
 
@@ -247,19 +247,19 @@ namespace KalipApp
 
            // MergeCells();
 
-            for (int j = 0; j < dataGridView1.Columns.Count; j++)
+            for (int j = 0; j < dataGridView2.Columns.Count; j++)
             {
                 Range myRange = (Range)sheet1.Cells[StartRow, StartCol + j];
-                myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+                myRange.Value2 = dataGridView2.Columns[j].HeaderText;
             }
             StartRow++;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
-                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                for (int j = 0; j < dataGridView2.Columns.Count; j++)
                 {
 
                     Range myRange = (Range)sheet1.Cells[StartRow + i, StartCol + j];
-                    myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                    myRange.Value2 = dataGridView2[j, i].Value == null ? "" : dataGridView2[j, i].Value;
                     myRange.Select();
 
 
@@ -282,6 +282,14 @@ namespace KalipApp
         private void ambiance_Button_11_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = kalipService.getAll();
+        }
+
+        private void ambiance_Button_24_Click(object sender, EventArgs e)
+        {
+            btnExcell.Visible = true;
+            ambiance_TabControl2.SelectedIndex=1;
+            dataGridView2.DataSource = kalipService.procAylikSatisOrani(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString());
+
         }
     }
 }

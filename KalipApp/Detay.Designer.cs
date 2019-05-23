@@ -217,6 +217,7 @@
             this.ambiance_Button_21.TabIndex = 13;
             this.ambiance_Button_21.Text = "Excell\'e Aktar";
             this.ambiance_Button_21.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.ambiance_Button_21.Click += new System.EventHandler(this.ambiance_Button_21_Click);
             // 
             // ambiance_Label12
             // 

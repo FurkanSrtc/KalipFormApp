@@ -108,6 +108,9 @@
     <Compile Include="NumuneDetay.cs">
       <DependentUpon>ModelKalip.tt</DependentUpon>
     </Compile>
+    <Compile Include="NumuneTariheGoreSatisOranları_Result.cs">
+      <DependentUpon>ModelKalip.tt</DependentUpon>
+    </Compile>
     <Compile Include="prcPieChartOnlyDate_Result.cs">
       <DependentUpon>ModelKalip.tt</DependentUpon>
     </Compile>

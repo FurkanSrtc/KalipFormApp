@@ -91,6 +91,12 @@
   <wsdl:message name="IKalipService_FindDetail_OutputMessage">
     <wsdl:part name="parameters" element="tns:FindDetailResponse" />
   </wsdl:message>
+  <wsdl:message name="IKalipService_procAylikSatisOrani_InputMessage">
+    <wsdl:part name="parameters" element="tns:procAylikSatisOrani" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_procAylikSatisOrani_OutputMessage">
+    <wsdl:part name="parameters" element="tns:procAylikSatisOraniResponse" />
+  </wsdl:message>
   <wsdl:portType name="IKalipService">
     <wsdl:operation name="getAll">
       <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/getAll" message="tns:IKalipService_getAll_InputMessage" />
@@ -147,6 +153,10 @@
     <wsdl:operation name="FindDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/FindDetail" message="tns:IKalipService_FindDetail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/FindDetailResponse" message="tns:IKalipService_FindDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="procAylikSatisOrani">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/procAylikSatisOrani" message="tns:IKalipService_procAylikSatisOrani_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/procAylikSatisOraniResponse" message="tns:IKalipService_procAylikSatisOrani_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IKalipService" type="tns:IKalipService">
@@ -270,6 +280,15 @@
     </wsdl:operation>
     <wsdl:operation name="FindDetail">
       <soap:operation soapAction="http://tempuri.org/IKalipService/FindDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procAylikSatisOrani">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/procAylikSatisOrani" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -98,5 +98,18 @@ namespace KalipServiceWCF
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<prcPieChartOnlyDate_Result>("prcPieChartOnlyDate", pBaslangicParameter, pBitisParameter);
         }
+    
+        public virtual ObjectResult<NumuneTariheGoreSatisOranları_Result> NumuneTariheGoreSatisOranları(Nullable<System.DateTime> pBaslangic, Nullable<System.DateTime> pBitis)
+        {
+            var pBaslangicParameter = pBaslangic.HasValue ?
+                new ObjectParameter("pBaslangic", pBaslangic) :
+                new ObjectParameter("pBaslangic", typeof(System.DateTime));
+    
+            var pBitisParameter = pBitis.HasValue ?
+                new ObjectParameter("pBitis", pBitis) :
+                new ObjectParameter("pBitis", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NumuneTariheGoreSatisOranları_Result>("NumuneTariheGoreSatisOranları", pBaslangicParameter, pBitisParameter);
+        }
     }
 }

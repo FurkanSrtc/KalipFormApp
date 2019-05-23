@@ -98,6 +98,12 @@ namespace KalipApp.KalipServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/FindDetail", ReplyAction="http://tempuri.org/IKalipService/FindDetailResponse")]
         System.Threading.Tasks.Task<KalipServiceWCF.NumuneDetay> FindDetailAsync(int urunkodu, int parcakodu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/procAylikSatisOrani", ReplyAction="http://tempuri.org/IKalipService/procAylikSatisOraniResponse")]
+        KalipServiceWCF.NumuneTariheGoreSatisOranları_Result[] procAylikSatisOrani(string baslangic, string bitis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/procAylikSatisOrani", ReplyAction="http://tempuri.org/IKalipService/procAylikSatisOraniResponse")]
+        System.Threading.Tasks.Task<KalipServiceWCF.NumuneTariheGoreSatisOranları_Result[]> procAylikSatisOraniAsync(string baslangic, string bitis);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -237,6 +243,14 @@ namespace KalipApp.KalipServiceReference1 {
         
         public System.Threading.Tasks.Task<KalipServiceWCF.NumuneDetay> FindDetailAsync(int urunkodu, int parcakodu) {
             return base.Channel.FindDetailAsync(urunkodu, parcakodu);
+        }
+        
+        public KalipServiceWCF.NumuneTariheGoreSatisOranları_Result[] procAylikSatisOrani(string baslangic, string bitis) {
+            return base.Channel.procAylikSatisOrani(baslangic, bitis);
+        }
+        
+        public System.Threading.Tasks.Task<KalipServiceWCF.NumuneTariheGoreSatisOranları_Result[]> procAylikSatisOraniAsync(string baslangic, string bitis) {
+            return base.Channel.procAylikSatisOraniAsync(baslangic, bitis);
         }
     }
 }

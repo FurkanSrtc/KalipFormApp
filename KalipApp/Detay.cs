@@ -4,6 +4,8 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace KalipApp
 {
@@ -135,7 +137,7 @@ namespace KalipApp
 
             OpenFileDialog dosya = new OpenFileDialog();
             dosya.Filter = "Resim Dosyası |*.jpg;*.nef;*.png| Video|*.avi| Tüm Dosyalar |*.*";
-            dosya.Title = "FurkanSertce";
+            dosya.Title = "KalipApp";
             dosya.ShowDialog();
              DosyaYolu = dosya.FileName;
             pictureBox1.ImageLocation = DosyaYolu;
@@ -177,6 +179,104 @@ namespace KalipApp
         {
             kalipService.DeleteDetail(Convert.ToInt32(numuneId));
             lblAciklama.Text = "Silme İşlemi Başarılı";
+        }
+
+        private void ambiance_Button_21_Click(object sender, EventArgs e)
+        {
+            //Excel.Application ExcelUygulama;             // excel uygulaması tanımla
+            //Excel.Workbook CalismaKitabi;                // çalışma Kitabı tanımla
+            //Excel.Worksheet CalismaSayfasi;              // çalışma Sayfası tanımla               
+            //ExcelUygulama = new Excel.Application();     // yeni bir excel uygulaması yarat
+
+            //CalismaKitabi = ExcelUygulama.Workbooks.Open(DosyaYolu);                  // dosyayı aç
+            //CalismaSayfasi = (Excel.Worksheet)CalismaKitabi.Worksheets.get_Item(1);   // 1. sayfayı aç
+
+
+
+
+
+            Excel.Application excel = new Excel.Application();
+            excel.Visible = true;
+            object Missing = Type.Missing;
+            Workbook CalismaKitabi = excel.Workbooks.Add(Missing);
+            Worksheet CalismaSayfasi = (Worksheet)CalismaKitabi.Sheets[1];
+
+
+
+            int StartCol = 11;
+            int StartRow = 1;
+
+
+            Excel.Range bolge = (Excel.Range)excel.Cells[StartRow, StartCol]; //bu satır sütundakine uygula
+
+
+            Excel.Range cerceve = (Excel.Range)excel.Range["k1", "k50"]; //Bu aralıktakilere uygula
+
+            cerceve.EntireRow.Font.Bold = true;
+            cerceve.EntireRow.Font.Size = 20;
+
+            bolge.Value2 = "ÜRÜN ADI: "+txtNumuneAdi.Text;
+
+            StartRow+=2;
+
+
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "PARÇA KODU: " + txtUrunKodu.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "KALIP KODU: " + txtKalipKodu.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "HAMMADDE: " + txtHammadde.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "RENK: " + txtUrunKodu.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "KALIP GÖZÜ: " + txtUrunKodu.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "TEKNİK ÖZELLİKLER: ";
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "KALIP BOYUTU: " + txtKalipBoyutu.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "BASKI SÜRESİ " + txtBaskiSuresi.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "TEDARİKÇİ FİRMA: " + txtTedarikciFirma.Text;
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "BİR BASKIDA ÇIKAN PARÇA MİKTARI: ";
+
+            StartRow++;
+
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = txtCikanParcaMiktari.Text;
+
+
+            StartRow += 2;
+            bolge = (Excel.Range)excel.Cells[StartRow, StartCol];
+            bolge.Value2 = "PARÇA AĞIRLIĞI: " + txtParcaAgirligi.Text;
+
+
+            
+            CalismaSayfasi.Shapes.AddPicture(pictureBox1.ImageLocation,
+                Microsoft.Office.Core.MsoTriState.msoFalse,
+                Microsoft.Office.Core.MsoTriState.msoCTrue,
+                0, 0, 450, 700);   // sol hiza, yukarıdan hiza, genişlik ve yükseklik değerleri
+
+           
         }
     }
 

@@ -61,4 +61,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="NumuneDetay" nillable="true" type="tns:NumuneDetay" />
+  <xs:complexType name="ArrayOfNumuneTariheGoreSatisOranları_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NumuneTariheGoreSatisOranları_Result" nillable="true" type="tns:NumuneTariheGoreSatisOranları_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNumuneTariheGoreSatisOranları_Result" nillable="true" type="tns:ArrayOfNumuneTariheGoreSatisOranları_Result" />
+  <xs:complexType name="NumuneTariheGoreSatisOranları_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumuneAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tarih" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NumuneTariheGoreSatisOranları_Result" nillable="true" type="tns:NumuneTariheGoreSatisOranları_Result" />
 </xs:schema>
