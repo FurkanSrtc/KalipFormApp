@@ -160,6 +160,8 @@ namespace KalipApp
 
             if (String.IsNullOrEmpty(txtParca.Text) || String.IsNullOrEmpty(txtKalip.Text))
             {
+                btnExcell.Visible = true;
+
              var a = kalipService.procAylikSatisOrani(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString());
 
                 LiveCharts.SeriesCollection series = new LiveCharts.SeriesCollection();
@@ -171,8 +173,10 @@ namespace KalipApp
                 }
 
 
-            
-                }
+                dataGridView2.DataSource = kalipService.procAylikSatisOrani(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString()); //Datagridviewa aktarım
+
+
+            }
 
             else
             {
