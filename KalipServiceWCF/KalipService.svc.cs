@@ -111,5 +111,63 @@ namespace KalipServiceWCF
            
             return db.prcPieChart(Convert.ToDateTime(baslangic), Convert.ToDateTime(bitis),parca,kalip).ToList();
         }
+
+        public void AddDetail(NumuneDetay numune)
+        {
+
+            db.NumuneDetay.Add(numune);
+            db.SaveChanges();
+
+        }
+
+        public void DeleteDetail(int id)
+        {
+
+            var num = db.NumuneDetay.Find(id);
+            if (num != null)
+            {
+                db.NumuneDetay.Remove(num);
+                db.SaveChanges();
+            }
+
+
+
+
+        }
+
+        public void EditDetail(NumuneDetay numune)
+        {
+
+            var num = db.NumuneDetay.FirstOrDefault(n => n.id == numune.id);
+            if (num != null)
+            {
+
+
+
+                num.KalipKodu = numune.KalipKodu;
+                num.NumuneAdi = numune.NumuneAdi;
+                num.BaskiSuresi = numune.BaskiSuresi;
+                num.UrunKodu = numune.UrunKodu;
+                num.CikanParcaMiktarı = numune.CikanParcaMiktarı;
+                num.Hammadde = numune.Hammadde;
+                num.KalipBoyutu = numune.KalipBoyutu;
+                num.KalipGozu = numune.KalipGozu;
+                num.ParcaAgirligi = numune.ParcaAgirligi;
+                num.Renk = numune.Renk;
+                num.ResimURL = numune.ResimURL;
+                num.TedarikciFirma = numune.TedarikciFirma;
+            }
+            db.SaveChanges();
+
+
+        }
+
+        public NumuneDetay FindDetail(int urunkodu, int kalipKodu)
+        {
+
+
+            return db.NumuneDetay.Where(x => x.UrunKodu == urunkodu && x.KalipKodu == kalipKodu).FirstOrDefault();
+
+        }
     }
 }

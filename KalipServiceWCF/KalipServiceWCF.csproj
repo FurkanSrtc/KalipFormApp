@@ -105,10 +105,19 @@
     <Compile Include="Numune.cs">
       <DependentUpon>ModelKalip.tt</DependentUpon>
     </Compile>
+    <Compile Include="NumuneDetay.cs">
+      <DependentUpon>ModelKalip.tt</DependentUpon>
+    </Compile>
     <Compile Include="prcPieChartOnlyDate_Result.cs">
       <DependentUpon>ModelKalip.tt</DependentUpon>
     </Compile>
     <Compile Include="prcPieChart_Result.cs">
+      <DependentUpon>ModelKalip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="procPieChartOnlyDate_Result.cs">
+      <DependentUpon>ModelKalip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="procPieChart_Result.cs">
       <DependentUpon>ModelKalip.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

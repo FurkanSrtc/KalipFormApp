@@ -6,7 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6cc51d1ba1834731b97a48c4fe0ec390" Name="Diagram1">
         <EntityTypeShape EntityType="KalipDBModel.Numune" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="KalipDBModel.Uye" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KalipDBModel.Uye" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KalipDBModel.NumuneDetay" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -16,6 +16,24 @@
           <Property Name="Adet" Type="int" />
           <Property Name="Tarih" Type="date" />
         </EntityType>
+        <EntityType Name="NumuneDetay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumuneAdi" Type="varchar" MaxLength="200" />
+          <Property Name="UrunKodu" Type="int" />
+          <Property Name="KalipKodu" Type="int" />
+          <Property Name="Hammadde" Type="varchar" MaxLength="20" />
+          <Property Name="Renk" Type="varchar" MaxLength="30" />
+          <Property Name="KalipGozu" Type="smallint" />
+          <Property Name="KalipBoyutu" Type="varchar" MaxLength="14" />
+          <Property Name="BaskiSuresi" Type="varchar" MaxLength="10" />
+          <Property Name="TedarikciFirma" Type="varchar" MaxLength="50" />
+          <Property Name="CikanParcaMiktarı" Type="varchar" MaxLength="20" />
+          <Property Name="ParcaAgirligi" Type="varchar" MaxLength="20" />
+          <Property Name="ResimURL" Type="varchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="Uye">
           <Key>
             <PropertyRef Name="Id" />
@@ -36,6 +54,7 @@
         </Function>
         <EntityContainer Name="KalipDBModelStoreContainer">
           <EntitySet Name="Numune" EntityType="Self.Numune" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NumuneDetay" EntityType="Self.NumuneDetay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uye" EntityType="Self.Uye" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -53,8 +72,6 @@
             <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
             <Parameter Name="pBitis" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <EntitySet Name="Numune" EntityType="KalipDBModel.Numune" />
-          <EntitySet Name="Uye" EntityType="KalipDBModel.Uye" />
           <FunctionImport Name="prcPieChart" ReturnType="Collection(KalipDBModel.prcPieChart_Result)">
             <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
             <Parameter Name="pBitis" Mode="In" Type="DateTime" />
@@ -65,12 +82,23 @@
             <Parameter Name="pBaslangic" Mode="In" Type="DateTime" />
             <Parameter Name="pBitis" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <EntitySet Name="Numune" EntityType="KalipDBModel.Numune" />
+          <EntitySet Name="Uye" EntityType="KalipDBModel.Uye" />
+          <EntitySet Name="NumuneDetay" EntityType="KalipDBModel.NumuneDetay" />
         </EntityContainer>
         <ComplexType Name="procPieChart_Result">
           <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
           <Property Type="Int32" Name="Adet" Nullable="true" />
         </ComplexType>
         <ComplexType Name="procPieChartOnlyDate_Result">
+          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="prcPieChart_Result">
+          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="prcPieChartOnlyDate_Result">
           <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
           <Property Type="Int32" Name="Adet" Nullable="true" />
         </ComplexType>
@@ -93,20 +121,46 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <ComplexType Name="prcPieChart_Result">
-          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
-          <Property Type="Int32" Name="Adet" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="prcPieChartOnlyDate_Result">
-          <Property Type="String" Name="Tarih" Nullable="true" MaxLength="7" />
-          <Property Type="Int32" Name="Adet" Nullable="true" />
-        </ComplexType>
+        <EntityType Name="NumuneDetay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumuneAdi" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UrunKodu" Type="Int32" />
+          <Property Name="KalipKodu" Type="Int32" />
+          <Property Name="Hammadde" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Renk" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="KalipGozu" Type="Int16" />
+          <Property Name="KalipBoyutu" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="BaskiSuresi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TedarikciFirma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CikanParcaMiktarı" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ParcaAgirligi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ResimURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KalipDBModelStoreContainer" CdmEntityContainer="KalipDBEntities">
+          <FunctionImportMapping FunctionImportName="prcPieChart" FunctionName="KalipDBModel.Store.prcPieChart">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KalipDBModel.prcPieChart_Result">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prcPieChartOnlyDate" FunctionName="KalipDBModel.Store.prcPieChartOnlyDate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KalipDBModel.prcPieChartOnlyDate_Result">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="Numune">
             <EntityTypeMapping TypeName="KalipDBModel.Numune">
               <MappingFragment StoreEntitySet="Numune">
@@ -128,22 +182,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="prcPieChart" FunctionName="KalipDBModel.Store.prcPieChart">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="KalipDBModel.prcPieChart_Result">
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-                <ScalarProperty Name="Adet" ColumnName="Adet" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="prcPieChartOnlyDate" FunctionName="KalipDBModel.Store.prcPieChartOnlyDate">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="KalipDBModel.prcPieChartOnlyDate_Result">
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-                <ScalarProperty Name="Adet" ColumnName="Adet" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <EntitySetMapping Name="NumuneDetay">
+            <EntityTypeMapping TypeName="KalipDBModel.NumuneDetay">
+              <MappingFragment StoreEntitySet="NumuneDetay">
+                <ScalarProperty Name="ResimURL" ColumnName="ResimURL" />
+                <ScalarProperty Name="ParcaAgirligi" ColumnName="ParcaAgirligi" />
+                <ScalarProperty Name="CikanParcaMiktarı" ColumnName="CikanParcaMiktarı" />
+                <ScalarProperty Name="TedarikciFirma" ColumnName="TedarikciFirma" />
+                <ScalarProperty Name="BaskiSuresi" ColumnName="BaskiSuresi" />
+                <ScalarProperty Name="KalipBoyutu" ColumnName="KalipBoyutu" />
+                <ScalarProperty Name="KalipGozu" ColumnName="KalipGozu" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="Hammadde" ColumnName="Hammadde" />
+                <ScalarProperty Name="KalipKodu" ColumnName="KalipKodu" />
+                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+                <ScalarProperty Name="NumuneAdi" ColumnName="NumuneAdi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

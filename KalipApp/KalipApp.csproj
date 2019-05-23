@@ -42,6 +42,9 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -68,6 +71,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Detay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detay.Designer.cs">
+      <DependentUpon>Detay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +96,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Detay.resx">
+      <DependentUpon>Detay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +130,7 @@
     <None Include="Connected Services\KalipServiceReference1\Service1.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\KalipServiceWCF.Numune.datasource" />
+    <None Include="Properties\DataSources\KalipServiceWCF.NumuneDetay.datasource" />
     <None Include="Properties\DataSources\KalipServiceWCF.prcPieChartOnlyDate_Result.datasource" />
     <None Include="Properties\DataSources\KalipServiceWCF.prcPieChart_Result.datasource" />
     <None Include="Properties\Settings.settings">

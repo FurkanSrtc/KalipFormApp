@@ -74,6 +74,30 @@ namespace KalipApp.KalipServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/PieChart", ReplyAction="http://tempuri.org/IKalipService/PieChartResponse")]
         System.Threading.Tasks.Task<KalipServiceWCF.prcPieChart_Result[]> PieChartAsync(string baslangic, string bitis, int parca, int kalip);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/AddDetail", ReplyAction="http://tempuri.org/IKalipService/AddDetailResponse")]
+        void AddDetail(KalipServiceWCF.NumuneDetay numune);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/AddDetail", ReplyAction="http://tempuri.org/IKalipService/AddDetailResponse")]
+        System.Threading.Tasks.Task AddDetailAsync(KalipServiceWCF.NumuneDetay numune);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/EditDetail", ReplyAction="http://tempuri.org/IKalipService/EditDetailResponse")]
+        void EditDetail(KalipServiceWCF.NumuneDetay numune);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/EditDetail", ReplyAction="http://tempuri.org/IKalipService/EditDetailResponse")]
+        System.Threading.Tasks.Task EditDetailAsync(KalipServiceWCF.NumuneDetay numune);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/DeleteDetail", ReplyAction="http://tempuri.org/IKalipService/DeleteDetailResponse")]
+        void DeleteDetail(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/DeleteDetail", ReplyAction="http://tempuri.org/IKalipService/DeleteDetailResponse")]
+        System.Threading.Tasks.Task DeleteDetailAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/FindDetail", ReplyAction="http://tempuri.org/IKalipService/FindDetailResponse")]
+        KalipServiceWCF.NumuneDetay FindDetail(int urunkodu, int parcakodu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/FindDetail", ReplyAction="http://tempuri.org/IKalipService/FindDetailResponse")]
+        System.Threading.Tasks.Task<KalipServiceWCF.NumuneDetay> FindDetailAsync(int urunkodu, int parcakodu);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -181,6 +205,38 @@ namespace KalipApp.KalipServiceReference1 {
         
         public System.Threading.Tasks.Task<KalipServiceWCF.prcPieChart_Result[]> PieChartAsync(string baslangic, string bitis, int parca, int kalip) {
             return base.Channel.PieChartAsync(baslangic, bitis, parca, kalip);
+        }
+        
+        public void AddDetail(KalipServiceWCF.NumuneDetay numune) {
+            base.Channel.AddDetail(numune);
+        }
+        
+        public System.Threading.Tasks.Task AddDetailAsync(KalipServiceWCF.NumuneDetay numune) {
+            return base.Channel.AddDetailAsync(numune);
+        }
+        
+        public void EditDetail(KalipServiceWCF.NumuneDetay numune) {
+            base.Channel.EditDetail(numune);
+        }
+        
+        public System.Threading.Tasks.Task EditDetailAsync(KalipServiceWCF.NumuneDetay numune) {
+            return base.Channel.EditDetailAsync(numune);
+        }
+        
+        public void DeleteDetail(int id) {
+            base.Channel.DeleteDetail(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteDetailAsync(int id) {
+            return base.Channel.DeleteDetailAsync(id);
+        }
+        
+        public KalipServiceWCF.NumuneDetay FindDetail(int urunkodu, int parcakodu) {
+            return base.Channel.FindDetail(urunkodu, parcakodu);
+        }
+        
+        public System.Threading.Tasks.Task<KalipServiceWCF.NumuneDetay> FindDetailAsync(int urunkodu, int parcakodu) {
+            return base.Channel.FindDetailAsync(urunkodu, parcakodu);
         }
     }
 }

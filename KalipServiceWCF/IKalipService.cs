@@ -44,6 +44,20 @@ namespace KalipServiceWCF
         [OperationContract]
         List<prcPieChart_Result> PieChart(string baslangic, string bitis,int parca, int kalip);
 
+        //-----------------
+
+        [OperationContract]
+        void AddDetail(NumuneDetay numune);
+
+        [OperationContract]
+        void EditDetail(NumuneDetay numune);
+
+        [OperationContract]
+        void DeleteDetail(int id);
+
+        [OperationContract]
+        NumuneDetay FindDetail(int urunkodu, int parcakodu);
+        
     }
 
 

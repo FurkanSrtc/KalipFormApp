@@ -37,6 +37,7 @@
             this.txtPass = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label1 = new Ambiance.Ambiance_Label();
             this.txt_username = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label3 = new Ambiance.Ambiance_Label();
             this.ambiance_ThemeContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             this.ambiance_ThemeContainer1.Controls.Add(this.ambiance_Button_21);
             this.ambiance_ThemeContainer1.Controls.Add(this.ambiance_Label2);
             this.ambiance_ThemeContainer1.Controls.Add(this.txtPass);
+            this.ambiance_ThemeContainer1.Controls.Add(this.ambiance_Label3);
             this.ambiance_ThemeContainer1.Controls.Add(this.ambiance_Label1);
             this.ambiance_ThemeContainer1.Controls.Add(this.txt_username);
             this.ambiance_ThemeContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -59,18 +61,18 @@
             this.ambiance_ThemeContainer1.Padding = new System.Windows.Forms.Padding(20, 56, 20, 16);
             this.ambiance_ThemeContainer1.RoundCorners = true;
             this.ambiance_ThemeContainer1.Sizable = true;
-            this.ambiance_ThemeContainer1.Size = new System.Drawing.Size(848, 562);
+            this.ambiance_ThemeContainer1.Size = new System.Drawing.Size(1478, 846);
             this.ambiance_ThemeContainer1.SmartBounds = true;
-            this.ambiance_ThemeContainer1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ambiance_ThemeContainer1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.ambiance_ThemeContainer1.TabIndex = 0;
             this.ambiance_ThemeContainer1.Text = "Kalıp Yönetim";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::KalipApp.Resource1.taslama;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 59);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(408, 495);
+            this.pictureBox1.Size = new System.Drawing.Size(749, 775);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -80,8 +82,8 @@
             // 
             this.ambiance_CheckBox1.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_CheckBox1.Checked = false;
-            this.ambiance_CheckBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ambiance_CheckBox1.Location = new System.Drawing.Point(554, 304);
+            this.ambiance_CheckBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ambiance_CheckBox1.Location = new System.Drawing.Point(1062, 434);
             this.ambiance_CheckBox1.Name = "ambiance_CheckBox1";
             this.ambiance_CheckBox1.Size = new System.Drawing.Size(171, 15);
             this.ambiance_CheckBox1.TabIndex = 8;
@@ -101,10 +103,10 @@
             // ambiance_Button_21
             // 
             this.ambiance_Button_21.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Button_21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.ambiance_Button_21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ambiance_Button_21.Image = null;
             this.ambiance_Button_21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ambiance_Button_21.Location = new System.Drawing.Point(554, 375);
+            this.ambiance_Button_21.Location = new System.Drawing.Point(1064, 512);
             this.ambiance_Button_21.Name = "ambiance_Button_21";
             this.ambiance_Button_21.Size = new System.Drawing.Size(253, 39);
             this.ambiance_Button_21.TabIndex = 6;
@@ -116,20 +118,20 @@
             // 
             this.ambiance_Label2.AutoSize = true;
             this.ambiance_Label2.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ambiance_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label2.Location = new System.Drawing.Point(484, 256);
+            this.ambiance_Label2.Location = new System.Drawing.Point(960, 375);
             this.ambiance_Label2.Name = "ambiance_Label2";
-            this.ambiance_Label2.Size = new System.Drawing.Size(65, 25);
+            this.ambiance_Label2.Size = new System.Drawing.Size(98, 32);
             this.ambiance_Label2.TabIndex = 3;
             this.ambiance_Label2.Text = "Parola";
             // 
             // txtPass
             // 
             this.txtPass.BackColor = System.Drawing.Color.Transparent;
-            this.txtPass.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPass.Location = new System.Drawing.Point(554, 251);
+            this.txtPass.Location = new System.Drawing.Point(1064, 374);
             this.txtPass.MaxLength = 32767;
             this.txtPass.Multiline = false;
             this.txtPass.Name = "txtPass";
@@ -143,20 +145,20 @@
             // 
             this.ambiance_Label1.AutoSize = true;
             this.ambiance_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ambiance_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label1.Location = new System.Drawing.Point(432, 180);
+            this.ambiance_Label1.Location = new System.Drawing.Point(884, 299);
             this.ambiance_Label1.Name = "ambiance_Label1";
-            this.ambiance_Label1.Size = new System.Drawing.Size(117, 25);
+            this.ambiance_Label1.Size = new System.Drawing.Size(173, 32);
             this.ambiance_Label1.TabIndex = 1;
             this.ambiance_Label1.Text = "Kullanıcı Adı";
             // 
             // txt_username
             // 
             this.txt_username.BackColor = System.Drawing.Color.Transparent;
-            this.txt_username.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_username.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_username.Location = new System.Drawing.Point(554, 176);
+            this.txt_username.Location = new System.Drawing.Point(1064, 299);
             this.txt_username.MaxLength = 32767;
             this.txt_username.Multiline = false;
             this.txt_username.Name = "txt_username";
@@ -166,16 +168,28 @@
             this.txt_username.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_username.UseSystemPasswordChar = false;
             // 
+            // ambiance_Label3
+            // 
+            this.ambiance_Label3.AutoSize = true;
+            this.ambiance_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ambiance_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label3.Location = new System.Drawing.Point(898, 126);
+            this.ambiance_Label3.Name = "ambiance_Label3";
+            this.ambiance_Label3.Size = new System.Drawing.Size(394, 48);
+            this.ambiance_Label3.TabIndex = 1;
+            this.ambiance_Label3.Text = "YÖNETİCİ PANELİ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 562);
+            this.ClientSize = new System.Drawing.Size(1478, 846);
             this.Controls.Add(this.ambiance_ThemeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(261, 65);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Kalıp Yönetim";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.ambiance_ThemeContainer1.ResumeLayout(false);
@@ -196,6 +210,7 @@
         private Ambiance.Ambiance_CheckBox ambiance_CheckBox1;
         private Ambiance.Ambiance_ControlBox ambiance_ControlBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Ambiance.Ambiance_Label ambiance_Label3;
     }
 }
 

@@ -29,40 +29,41 @@ namespace KalipServiceWCF
     
         public virtual DbSet<Numune> Numune { get; set; }
         public virtual DbSet<Uye> Uye { get; set; }
+        public virtual DbSet<NumuneDetay> NumuneDetay { get; set; }
     
-        //public virtual ObjectResult<procPieChart_Result> procPieChart(Nullable<System.DateTime> pBaslangic, Nullable<System.DateTime> pBitis, Nullable<int> pUrunKodu, Nullable<int> pKalipKodu)
-        //{
-        //    var pBaslangicParameter = pBaslangic.HasValue ?
-        //        new ObjectParameter("pBaslangic", pBaslangic) :
-        //        new ObjectParameter("pBaslangic", typeof(System.DateTime));
+        public virtual ObjectResult<procPieChart_Result> procPieChart(Nullable<System.DateTime> pBaslangic, Nullable<System.DateTime> pBitis, Nullable<int> pUrunKodu, Nullable<int> pKalipKodu)
+        {
+            var pBaslangicParameter = pBaslangic.HasValue ?
+                new ObjectParameter("pBaslangic", pBaslangic) :
+                new ObjectParameter("pBaslangic", typeof(System.DateTime));
     
-        //    var pBitisParameter = pBitis.HasValue ?
-        //        new ObjectParameter("pBitis", pBitis) :
-        //        new ObjectParameter("pBitis", typeof(System.DateTime));
+            var pBitisParameter = pBitis.HasValue ?
+                new ObjectParameter("pBitis", pBitis) :
+                new ObjectParameter("pBitis", typeof(System.DateTime));
     
-        //    var pUrunKoduParameter = pUrunKodu.HasValue ?
-        //        new ObjectParameter("pUrunKodu", pUrunKodu) :
-        //        new ObjectParameter("pUrunKodu", typeof(int));
+            var pUrunKoduParameter = pUrunKodu.HasValue ?
+                new ObjectParameter("pUrunKodu", pUrunKodu) :
+                new ObjectParameter("pUrunKodu", typeof(int));
     
-        //    var pKalipKoduParameter = pKalipKodu.HasValue ?
-        //        new ObjectParameter("pKalipKodu", pKalipKodu) :
-        //        new ObjectParameter("pKalipKodu", typeof(int));
+            var pKalipKoduParameter = pKalipKodu.HasValue ?
+                new ObjectParameter("pKalipKodu", pKalipKodu) :
+                new ObjectParameter("pKalipKodu", typeof(int));
     
-        //    return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procPieChart_Result>("procPieChart", pBaslangicParameter, pBitisParameter, pUrunKoduParameter, pKalipKoduParameter);
-        //}
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procPieChart_Result>("procPieChart", pBaslangicParameter, pBitisParameter, pUrunKoduParameter, pKalipKoduParameter);
+        }
     
-        //public virtual ObjectResult<procPieChartOnlyDate_Result> procPieChartOnlyDate(Nullable<System.DateTime> pBaslangic, Nullable<System.DateTime> pBitis)
-        //{
-        //    var pBaslangicParameter = pBaslangic.HasValue ?
-        //        new ObjectParameter("pBaslangic", pBaslangic) :
-        //        new ObjectParameter("pBaslangic", typeof(System.DateTime));
+        public virtual ObjectResult<procPieChartOnlyDate_Result> procPieChartOnlyDate(Nullable<System.DateTime> pBaslangic, Nullable<System.DateTime> pBitis)
+        {
+            var pBaslangicParameter = pBaslangic.HasValue ?
+                new ObjectParameter("pBaslangic", pBaslangic) :
+                new ObjectParameter("pBaslangic", typeof(System.DateTime));
     
-        //    var pBitisParameter = pBitis.HasValue ?
-        //        new ObjectParameter("pBitis", pBitis) :
-        //        new ObjectParameter("pBitis", typeof(System.DateTime));
+            var pBitisParameter = pBitis.HasValue ?
+                new ObjectParameter("pBitis", pBitis) :
+                new ObjectParameter("pBitis", typeof(System.DateTime));
     
-        //    return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procPieChartOnlyDate_Result>("procPieChartOnlyDate", pBaslangicParameter, pBitisParameter);
-        //}
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procPieChartOnlyDate_Result>("procPieChartOnlyDate", pBaslangicParameter, pBitisParameter);
+        }
     
         public virtual ObjectResult<prcPieChart_Result> prcPieChart(Nullable<System.DateTime> pBaslangic, Nullable<System.DateTime> pBitis, Nullable<int> pUrunKodu, Nullable<int> pKalipKodu)
         {

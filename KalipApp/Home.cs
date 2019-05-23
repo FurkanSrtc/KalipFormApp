@@ -10,6 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace KalipApp
 {
@@ -17,8 +21,14 @@ namespace KalipApp
     {
         public Home()
         {
+          
             InitializeComponent();
+
+
+       
+
         }
+
         private KalipServiceReference1.KalipServiceClient kalipService = new KalipApp.KalipServiceReference1.KalipServiceClient();
 
         private void Home_Load(object sender, EventArgs e)
@@ -31,6 +41,10 @@ namespace KalipApp
             dataGridView1.Columns[3].Width = 40;
             dataGridView1.Columns[4].Width = 40;
             dataGridView1.Columns[5].Width = 80;
+
+            this.dataGridView1.Columns["Tarih"].SortMode =
+     DataGridViewColumnSortMode.Automatic;
+
         }
 
         private void ambiance_Label1_Click(object sender, EventArgs e)
@@ -134,6 +148,7 @@ namespace KalipApp
         private void btnSil_Click(object sender, EventArgs e)
         {
             kalipService.Delete(Convert.ToInt32(numuneId));
+            reflesh();
         }
 
 
@@ -147,32 +162,126 @@ namespace KalipApp
             {
              var a = kalipService.PieChartDate(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString());
 
-                SeriesCollection series = new SeriesCollection();
+                LiveCharts.SeriesCollection series = new LiveCharts.SeriesCollection();
 
                 foreach (var obj in a)
                 {
                     series.Add(new PieSeries() { Title = Convert.ToDateTime(obj.Tarih.ToString()).ToShortDateString(), Values = new ChartValues<int> { Convert.ToInt32(obj.Adet) }, DataLabels = true, LabelPoint = labelpoint });
                     pieChart1.Series = series;
                 }
-            }
+
+
+            
+                }
 
             else
             {
             var a= kalipService.PieChart(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString(),Convert.ToInt32(txtParca.Text),Convert.ToInt32(txtKalip.Text));
 
-                SeriesCollection series = new SeriesCollection();
+                LiveCharts.SeriesCollection series = new LiveCharts.SeriesCollection();
 
                 foreach (var obj in a)
                 {
                     series.Add(new PieSeries() { Title = Convert.ToDateTime(obj.Tarih.ToString()).ToShortDateString(), Values = new ChartValues<int> { Convert.ToInt32(obj.Adet) }, DataLabels = true, LabelPoint = labelpoint });
                     pieChart1.Series = series;
+
+          
                 }
+
+
+
+               
             }
 
           
 
         
 
+        }
+
+        private void cartesianChart1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //private void MergeCells()
+        //{
+        //    Excel.Application oXL;
+        //    Excel._Workbook oWB;
+        //    Excel._Worksheet ws;
+        //    Excel.Range oRng;
+        //    //Start Excel and get Application object.
+        //    oXL = new Excel.Application();
+        //    oXL.Visible = true;
+
+        //    //Get a new workbook.
+        //    oWB = (Excel._Workbook)(oXL.Workbooks.Add(Missing.Value));
+
+        //    ws = (Excel._Worksheet)oWB.ActiveSheet;
+
+
+        //    oRng = ws.get_Range("A1", "M23");
+        //    oRng.Value2 = "Hello World";
+        //    oRng.Merge(Missing.Value);
+        //}
+
+
+        private void btnExcell_Click(object sender, EventArgs e)
+        {
+            Excel.Application excel = new Excel.Application();
+            excel.Visible = true;
+            object Missing = Type.Missing;
+            Workbook workbook = excel.Workbooks.Add(Missing);
+            Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
+            int StartCol = 1;
+            int StartRow = 1;
+
+
+
+
+           // MergeCells();
+
+            for (int j = 0; j < dataGridView1.Columns.Count; j++)
+            {
+                Range myRange = (Range)sheet1.Cells[StartRow, StartCol + j];
+                myRange.Value2 = dataGridView1.Columns[j].HeaderText;
+            }
+            StartRow++;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+
+                    Range myRange = (Range)sheet1.Cells[StartRow + i, StartCol + j];
+                    myRange.Value2 = dataGridView1[j, i].Value == null ? "" : dataGridView1[j, i].Value;
+                    myRange.Select();
+
+
+                }
+            }
+        }
+
+        private void ambiance_ThemeContainer1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ambiance_Button_23_Click(object sender, EventArgs e)
+        {
+            Detay detay = new Detay(kalipService.Find(Convert.ToInt32(txtParcaKodu.Text), Convert.ToInt32(txtNumuneKodu.Text)));
+            detay.Show();
+     
+        }
+
+        private void ambiance_Button_11_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = kalipService.getAll();
         }
     }
 }
