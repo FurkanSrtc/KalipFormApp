@@ -86,20 +86,76 @@ namespace KalipApp
         {
          
         }
+        int click = 0;
+
+        private void temizle()
+        {
+            txtNumuneAdi.Text = "";
+            txtNumuneKodu.Text = "";
+            txtParcaKodu.Text = "";
+            txtNumuneAdi.Text = "";
+            txtAdet.Text = "";
+
+        }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(numuneId);
-            Numune numune = new Numune();
-            
-            numune.Adet = Convert.ToInt32(txtAdet.Text);
-            numune.KalipKodu = Convert.ToInt32(txtNumuneKodu.Text);
-            numune.NumuneAdi = txtNumuneAdi.Text;
-            numune.Tarih = dateTimePicker1.Value;
-            numune.UrunKodu = Convert.ToInt32(txtParcaKodu.Text);
-            kalipService.Add(numune);
-            reflesh();
-            
+
+       
+
+
+            click++;
+            if (click % 2 != 0)
+            {
+                dataGridView1.Enabled = false;
+
+               temizle();
+
+                btnEkle.Text = "Ekle";
+                ambiance_Button_23.Visible = false;
+                ambiance_Button_21.Visible = false;
+                btnSil.Visible = false;
+                dateTimePicker1.Text = DateTime.Now.ToShortDateString();
+
+            }
+
+            else
+            {
+                btnEkle.Text = "Kayıt Ekle";
+                ambiance_Button_23.Visible = true;
+                ambiance_Button_21.Visible = true;
+                btnSil.Visible = true;
+                dataGridView1.Enabled = true;
+                try
+                {
+                    var a = kalipService.FindDetail(Convert.ToInt32(txtParcaKodu.Text), Convert.ToInt32(txtNumuneKodu.Text));
+
+                    if (String.IsNullOrEmpty(a.id.ToString()))
+                    {
+                        MessageBox.Show("Girdiğiniz Koda Göre Numune Bulunamadı.");
+                    }
+                    else
+                    {
+                
+                        Numune numune = new Numune();
+
+                        numune.Adet = Convert.ToInt32(txtAdet.Text);
+                        numune.KalipKodu = Convert.ToInt32(txtNumuneKodu.Text);
+                        numune.NumuneAdi = txtNumuneAdi.Text;
+                        numune.Tarih = dateTimePicker1.Value;
+                        numune.UrunKodu = Convert.ToInt32(txtParcaKodu.Text);
+                        kalipService.Add(numune);
+                        reflesh();
+                    }
+                }
+                catch (Exception)
+                {
+                 
+                }
+            }
+             
+           
+
         }
 
         public void reflesh()
@@ -137,10 +193,10 @@ namespace KalipApp
             Numune numune = new Numune();
             numune.Id = Convert.ToInt32(numuneId);
             numune.Adet = Convert.ToInt32(txtAdet.Text);
-            numune.KalipKodu = Convert.ToInt32(txtNumuneKodu.Text);
-            numune.NumuneAdi = txtNumuneAdi.Text;
+        //    numune.KalipKodu = Convert.ToInt32(txtNumuneKodu.Text);
+       //     numune.NumuneAdi = txtNumuneAdi.Text;
             numune.Tarih = dateTimePicker1.Value;
-            numune.UrunKodu = Convert.ToInt32(txtParcaKodu.Text);
+         //   numune.UrunKodu = Convert.ToInt32(txtParcaKodu.Text);
             kalipService.Edit(numune);
             reflesh();
         }
@@ -294,6 +350,45 @@ namespace KalipApp
             ambiance_TabControl2.SelectedIndex=1;
             dataGridView2.DataSource = kalipService.procAylikSatisOrani(Convert.ToDateTime(dateTimePickerBaslangic.Text).ToShortDateString(), Convert.ToDateTime(dateTimePickerBitis.Text).ToShortDateString());
 
+        }
+
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+            btnEkle.Text = "Kayıt Ekle";
+            ambiance_Button_23.Visible = true;
+            ambiance_Button_21.Visible = true;
+            btnSil.Visible = true;
+            dataGridView1.Enabled = true;
+        }
+
+        private void txtParcaKodu_TextChanged(object sender, EventArgs e)
+        {
+            NumuneAdKontrol();
+        }
+
+        private void NumuneAdKontrol() //NUmune adını numunedetay tablosundan çeker
+        {
+            if (!String.IsNullOrEmpty(txtParcaKodu.Text) || !String.IsNullOrEmpty(txtParcaKodu.Text))
+            {
+                try
+                {
+                    var find = kalipService.Find(Convert.ToInt32(txtParcaKodu.Text), Convert.ToInt32(txtNumuneKodu.Text));
+                    if (!String.IsNullOrEmpty(find.Id.ToString()))
+                    {
+                        txtNumuneAdi.Text = find.NumuneAdi;
+                    }
+                }
+                catch (Exception)
+                {
+                }
+
+            }
+          
+        }
+
+        private void txtNumuneKodu_TextChanged(object sender, EventArgs e)
+        {
+            NumuneAdKontrol();
         }
     }
 }

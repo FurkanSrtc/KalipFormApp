@@ -41,10 +41,10 @@ namespace KalipServiceWCF
 
 
 
-                    num.KalipKodu = numune.KalipKodu;
-                    num.NumuneAdi = numune.NumuneAdi;
+                   // num.KalipKodu = numune.KalipKodu;
+                  //  num.NumuneAdi = numune.NumuneAdi;
                     num.Tarih = numune.Tarih;
-                    num.UrunKodu = numune.UrunKodu;
+                  //  num.UrunKodu = numune.UrunKodu;
                     num.Adet = numune.Adet;
                 }
                 db.SaveChanges();
@@ -174,5 +174,7 @@ namespace KalipServiceWCF
         {
             return db.NumuneTariheGoreSatisOranları(Convert.ToDateTime(baslangic), Convert.ToDateTime(bitis)).ToList();
         }
+
+      
     }
 }

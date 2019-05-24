@@ -32,20 +32,21 @@
             this.ambiance_TabControl1 = new Ambiance.Ambiance_TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtParcaKodu = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label5 = new Ambiance.Ambiance_Label();
             this.ambiance_Button_23 = new Ambiance.Ambiance_Button_2();
             this.txtAdet = new Ambiance.Ambiance_TextBox();
             this.txtNumuneKodu = new Ambiance.Ambiance_TextBox();
             this.ambiance_Button_21 = new Ambiance.Ambiance_Button_2();
             this.btnSil = new Ambiance.Ambiance_Button_2();
+            this.btnIptal = new Ambiance.Ambiance_Button_2();
             this.btnEkle = new Ambiance.Ambiance_Button_2();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtParcaKodu = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label6 = new Ambiance.Ambiance_Label();
             this.ambiance_Label4 = new Ambiance.Ambiance_Label();
             this.txtNumuneAdi = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label3 = new Ambiance.Ambiance_Label();
             this.ambiance_Label2 = new Ambiance.Ambiance_Label();
-            this.ambiance_Label5 = new Ambiance.Ambiance_Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ambiance_Button_11 = new Ambiance.Ambiance_Button_1();
             this.ambiance_Label1 = new Ambiance.Ambiance_Label();
@@ -127,20 +128,21 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtParcaKodu);
+            this.groupBox2.Controls.Add(this.ambiance_Label5);
             this.groupBox2.Controls.Add(this.ambiance_Button_23);
             this.groupBox2.Controls.Add(this.txtAdet);
             this.groupBox2.Controls.Add(this.txtNumuneKodu);
             this.groupBox2.Controls.Add(this.ambiance_Button_21);
             this.groupBox2.Controls.Add(this.btnSil);
+            this.groupBox2.Controls.Add(this.btnIptal);
             this.groupBox2.Controls.Add(this.btnEkle);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.txtParcaKodu);
             this.groupBox2.Controls.Add(this.ambiance_Label6);
             this.groupBox2.Controls.Add(this.ambiance_Label4);
             this.groupBox2.Controls.Add(this.txtNumuneAdi);
             this.groupBox2.Controls.Add(this.ambiance_Label3);
             this.groupBox2.Controls.Add(this.ambiance_Label2);
-            this.groupBox2.Controls.Add(this.ambiance_Label5);
             this.groupBox2.Location = new System.Drawing.Point(1200, 14);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -149,15 +151,44 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             // 
+            // txtParcaKodu
+            // 
+            this.txtParcaKodu.BackColor = System.Drawing.Color.Transparent;
+            this.txtParcaKodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtParcaKodu.ForeColor = System.Drawing.Color.DimGray;
+            this.txtParcaKodu.Location = new System.Drawing.Point(34, 198);
+            this.txtParcaKodu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtParcaKodu.MaxLength = 32767;
+            this.txtParcaKodu.Multiline = false;
+            this.txtParcaKodu.Name = "txtParcaKodu";
+            this.txtParcaKodu.ReadOnly = false;
+            this.txtParcaKodu.Size = new System.Drawing.Size(525, 39);
+            this.txtParcaKodu.TabIndex = 26;
+            this.txtParcaKodu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtParcaKodu.UseSystemPasswordChar = false;
+            this.txtParcaKodu.TextChanged += new System.EventHandler(this.txtParcaKodu_TextChanged);
+            // 
+            // ambiance_Label5
+            // 
+            this.ambiance_Label5.AutoSize = true;
+            this.ambiance_Label5.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ambiance_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label5.Location = new System.Drawing.Point(28, 160);
+            this.ambiance_Label5.Name = "ambiance_Label5";
+            this.ambiance_Label5.Size = new System.Drawing.Size(163, 31);
+            this.ambiance_Label5.TabIndex = 27;
+            this.ambiance_Label5.Text = "Parça Kodu:";
+            // 
             // ambiance_Button_23
             // 
             this.ambiance_Button_23.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_Button_23.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.ambiance_Button_23.Image = null;
             this.ambiance_Button_23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ambiance_Button_23.Location = new System.Drawing.Point(34, 634);
+            this.ambiance_Button_23.Location = new System.Drawing.Point(35, 722);
             this.ambiance_Button_23.Name = "ambiance_Button_23";
-            this.ambiance_Button_23.Size = new System.Drawing.Size(518, 58);
+            this.ambiance_Button_23.Size = new System.Drawing.Size(524, 48);
             this.ambiance_Button_23.TabIndex = 25;
             this.ambiance_Button_23.Text = "Detay";
             this.ambiance_Button_23.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -184,7 +215,7 @@
             this.txtNumuneKodu.BackColor = System.Drawing.Color.Transparent;
             this.txtNumuneKodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtNumuneKodu.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNumuneKodu.Location = new System.Drawing.Point(27, 205);
+            this.txtNumuneKodu.Location = new System.Drawing.Point(34, 308);
             this.txtNumuneKodu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumuneKodu.MaxLength = 32767;
             this.txtNumuneKodu.Multiline = false;
@@ -194,6 +225,7 @@
             this.txtNumuneKodu.TabIndex = 15;
             this.txtNumuneKodu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNumuneKodu.UseSystemPasswordChar = false;
+            this.txtNumuneKodu.TextChanged += new System.EventHandler(this.txtNumuneKodu_TextChanged);
             // 
             // ambiance_Button_21
             // 
@@ -201,10 +233,10 @@
             this.ambiance_Button_21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ambiance_Button_21.Image = null;
             this.ambiance_Button_21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ambiance_Button_21.Location = new System.Drawing.Point(33, 750);
+            this.ambiance_Button_21.Location = new System.Drawing.Point(35, 780);
             this.ambiance_Button_21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ambiance_Button_21.Name = "ambiance_Button_21";
-            this.ambiance_Button_21.Size = new System.Drawing.Size(525, 42);
+            this.ambiance_Button_21.Size = new System.Drawing.Size(255, 42);
             this.ambiance_Button_21.TabIndex = 24;
             this.ambiance_Button_21.Text = "Güncelle";
             this.ambiance_Button_21.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -216,14 +248,29 @@
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSil.Image = null;
             this.btnSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSil.Location = new System.Drawing.Point(33, 801);
+            this.btnSil.Location = new System.Drawing.Point(313, 780);
             this.btnSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(525, 42);
+            this.btnSil.Size = new System.Drawing.Size(246, 42);
             this.btnSil.TabIndex = 23;
             this.btnSil.Text = "Sil";
             this.btnSil.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.BackColor = System.Drawing.Color.Transparent;
+            this.btnIptal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIptal.Image = null;
+            this.btnIptal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIptal.Location = new System.Drawing.Point(35, 722);
+            this.btnIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(524, 42);
+            this.btnIptal.TabIndex = 22;
+            this.btnIptal.Text = "İptal";
+            this.btnIptal.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // btnEkle
             // 
@@ -231,12 +278,12 @@
             this.btnEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEkle.Image = null;
             this.btnEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEkle.Location = new System.Drawing.Point(34, 699);
+            this.btnEkle.Location = new System.Drawing.Point(35, 670);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(524, 42);
             this.btnEkle.TabIndex = 22;
-            this.btnEkle.Text = "Ekle";
+            this.btnEkle.Text = "Kayıt Ekle";
             this.btnEkle.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
@@ -249,22 +296,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(523, 36);
             this.dateTimePicker1.TabIndex = 17;
             this.dateTimePicker1.Value = new System.DateTime(2019, 5, 21, 0, 0, 0, 0);
-            // 
-            // txtParcaKodu
-            // 
-            this.txtParcaKodu.BackColor = System.Drawing.Color.Transparent;
-            this.txtParcaKodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtParcaKodu.ForeColor = System.Drawing.Color.DimGray;
-            this.txtParcaKodu.Location = new System.Drawing.Point(33, 315);
-            this.txtParcaKodu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtParcaKodu.MaxLength = 32767;
-            this.txtParcaKodu.Multiline = false;
-            this.txtParcaKodu.Name = "txtParcaKodu";
-            this.txtParcaKodu.ReadOnly = false;
-            this.txtParcaKodu.Size = new System.Drawing.Size(525, 39);
-            this.txtParcaKodu.TabIndex = 13;
-            this.txtParcaKodu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtParcaKodu.UseSystemPasswordChar = false;
             // 
             // ambiance_Label6
             // 
@@ -293,9 +324,10 @@
             // txtNumuneAdi
             // 
             this.txtNumuneAdi.BackColor = System.Drawing.Color.Transparent;
+            this.txtNumuneAdi.Enabled = false;
             this.txtNumuneAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtNumuneAdi.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNumuneAdi.Location = new System.Drawing.Point(27, 96);
+            this.txtNumuneAdi.Location = new System.Drawing.Point(34, 95);
             this.txtNumuneAdi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumuneAdi.MaxLength = 32767;
             this.txtNumuneAdi.Multiline = false;
@@ -312,7 +344,7 @@
             this.ambiance_Label3.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ambiance_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label3.Location = new System.Drawing.Point(20, 167);
+            this.ambiance_Label3.Location = new System.Drawing.Point(27, 270);
             this.ambiance_Label3.Name = "ambiance_Label3";
             this.ambiance_Label3.Size = new System.Drawing.Size(152, 31);
             this.ambiance_Label3.TabIndex = 18;
@@ -324,23 +356,11 @@
             this.ambiance_Label2.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ambiance_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label2.Location = new System.Drawing.Point(20, 57);
+            this.ambiance_Label2.Location = new System.Drawing.Point(27, 56);
             this.ambiance_Label2.Name = "ambiance_Label2";
             this.ambiance_Label2.Size = new System.Drawing.Size(170, 31);
             this.ambiance_Label2.TabIndex = 14;
             this.ambiance_Label2.Text = "Numune Adı:";
-            // 
-            // ambiance_Label5
-            // 
-            this.ambiance_Label5.AutoSize = true;
-            this.ambiance_Label5.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ambiance_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label5.Location = new System.Drawing.Point(27, 277);
-            this.ambiance_Label5.Name = "ambiance_Label5";
-            this.ambiance_Label5.Size = new System.Drawing.Size(163, 31);
-            this.ambiance_Label5.TabIndex = 19;
-            this.ambiance_Label5.Text = "Parça Kodu:";
             // 
             // groupBox1
             // 
@@ -708,13 +728,11 @@
         private Ambiance.Ambiance_Button_2 btnSil;
         private Ambiance.Ambiance_Button_2 btnEkle;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private Ambiance.Ambiance_TextBox txtParcaKodu;
         private Ambiance.Ambiance_Label ambiance_Label6;
         private Ambiance.Ambiance_Label ambiance_Label4;
         private Ambiance.Ambiance_TextBox txtNumuneAdi;
         private Ambiance.Ambiance_Label ambiance_Label3;
         private Ambiance.Ambiance_Label ambiance_Label2;
-        private Ambiance.Ambiance_Label ambiance_Label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private Ambiance.Ambiance_Label ambiance_Label1;
         private Ambiance.Ambiance_TextBox txtSearch;
@@ -737,5 +755,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage4;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private Ambiance.Ambiance_TextBox txtParcaKodu;
+        private Ambiance.Ambiance_Label ambiance_Label5;
+        private Ambiance.Ambiance_Button_2 btnIptal;
     }
 }
