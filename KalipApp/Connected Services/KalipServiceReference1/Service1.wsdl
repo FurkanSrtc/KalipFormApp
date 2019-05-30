@@ -97,6 +97,18 @@
   <wsdl:message name="IKalipService_procAylikSatisOrani_OutputMessage">
     <wsdl:part name="parameters" element="tns:procAylikSatisOraniResponse" />
   </wsdl:message>
+  <wsdl:message name="IKalipService_HatirlasinMi_InputMessage">
+    <wsdl:part name="parameters" element="tns:HatirlasinMi" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_HatirlasinMi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HatirlasinMiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_HatirlaChecked_InputMessage">
+    <wsdl:part name="parameters" element="tns:HatirlaChecked" />
+  </wsdl:message>
+  <wsdl:message name="IKalipService_HatirlaChecked_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HatirlaCheckedResponse" />
+  </wsdl:message>
   <wsdl:portType name="IKalipService">
     <wsdl:operation name="getAll">
       <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/getAll" message="tns:IKalipService_getAll_InputMessage" />
@@ -157,6 +169,14 @@
     <wsdl:operation name="procAylikSatisOrani">
       <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/procAylikSatisOrani" message="tns:IKalipService_procAylikSatisOrani_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/procAylikSatisOraniResponse" message="tns:IKalipService_procAylikSatisOrani_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HatirlasinMi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/HatirlasinMi" message="tns:IKalipService_HatirlasinMi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/HatirlasinMiResponse" message="tns:IKalipService_HatirlasinMi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HatirlaChecked">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKalipService/HatirlaChecked" message="tns:IKalipService_HatirlaChecked_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKalipService/HatirlaCheckedResponse" message="tns:IKalipService_HatirlaChecked_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IKalipService" type="tns:IKalipService">
@@ -289,6 +309,24 @@
     </wsdl:operation>
     <wsdl:operation name="procAylikSatisOrani">
       <soap:operation soapAction="http://tempuri.org/IKalipService/procAylikSatisOrani" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HatirlasinMi">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/HatirlasinMi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HatirlaChecked">
+      <soap:operation soapAction="http://tempuri.org/IKalipService/HatirlaChecked" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -21,6 +21,11 @@ namespace KalipApp
         public Form1()
         {
             InitializeComponent();
+            var uye = kalipService.HatirlasinMi();
+            txt_username.Text = uye.UserName;
+            txtPass.Text = uye.Password;
+            ambiance_CheckBox1.Checked = (bool)uye.BeniHatirla;
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -33,6 +38,9 @@ namespace KalipApp
         
             if (kalipService.GetUser(txt_username.Text, txtPass.Text)>=1)
             {
+
+                kalipService.HatirlaChecked(ambiance_CheckBox1.Checked);
+
                 Home home = new Home();
                 home.Show();
                 this.Hide();
@@ -41,6 +49,16 @@ namespace KalipApp
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ambiance_CheckBox1_CheckedChanged(object sender)
+        {
+
+        }
+
+        private void ambiance_ThemeContainer1_Click(object sender, EventArgs e)
         {
 
         }

@@ -104,6 +104,18 @@ namespace KalipApp.KalipServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/procAylikSatisOrani", ReplyAction="http://tempuri.org/IKalipService/procAylikSatisOraniResponse")]
         System.Threading.Tasks.Task<KalipServiceWCF.NumuneTariheGoreSatisOranları_Result[]> procAylikSatisOraniAsync(string baslangic, string bitis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/HatirlasinMi", ReplyAction="http://tempuri.org/IKalipService/HatirlasinMiResponse")]
+        KalipServiceWCF.Uye HatirlasinMi();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/HatirlasinMi", ReplyAction="http://tempuri.org/IKalipService/HatirlasinMiResponse")]
+        System.Threading.Tasks.Task<KalipServiceWCF.Uye> HatirlasinMiAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/HatirlaChecked", ReplyAction="http://tempuri.org/IKalipService/HatirlaCheckedResponse")]
+        void HatirlaChecked(bool a);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKalipService/HatirlaChecked", ReplyAction="http://tempuri.org/IKalipService/HatirlaCheckedResponse")]
+        System.Threading.Tasks.Task HatirlaCheckedAsync(bool a);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -251,6 +263,22 @@ namespace KalipApp.KalipServiceReference1 {
         
         public System.Threading.Tasks.Task<KalipServiceWCF.NumuneTariheGoreSatisOranları_Result[]> procAylikSatisOraniAsync(string baslangic, string bitis) {
             return base.Channel.procAylikSatisOraniAsync(baslangic, bitis);
+        }
+        
+        public KalipServiceWCF.Uye HatirlasinMi() {
+            return base.Channel.HatirlasinMi();
+        }
+        
+        public System.Threading.Tasks.Task<KalipServiceWCF.Uye> HatirlasinMiAsync() {
+            return base.Channel.HatirlasinMiAsync();
+        }
+        
+        public void HatirlaChecked(bool a) {
+            base.Channel.HatirlaChecked(a);
+        }
+        
+        public System.Threading.Tasks.Task HatirlaCheckedAsync(bool a) {
+            return base.Channel.HatirlaCheckedAsync(a);
         }
     }
 }

@@ -35,9 +35,9 @@
             this.ambiance_Button_21 = new Ambiance.Ambiance_Button_2();
             this.ambiance_Label2 = new Ambiance.Ambiance_Label();
             this.txtPass = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label3 = new Ambiance.Ambiance_Label();
             this.ambiance_Label1 = new Ambiance.Ambiance_Label();
             this.txt_username = new Ambiance.Ambiance_TextBox();
-            this.ambiance_Label3 = new Ambiance.Ambiance_Label();
             this.ambiance_ThemeContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             this.ambiance_ThemeContainer1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.ambiance_ThemeContainer1.TabIndex = 0;
             this.ambiance_ThemeContainer1.Text = "Kalıp Yönetim";
+            this.ambiance_ThemeContainer1.Click += new System.EventHandler(this.ambiance_ThemeContainer1_Click);
             // 
             // pictureBox1
             // 
@@ -88,6 +89,7 @@
             this.ambiance_CheckBox1.Size = new System.Drawing.Size(171, 15);
             this.ambiance_CheckBox1.TabIndex = 8;
             this.ambiance_CheckBox1.Text = "Beni Hatırla";
+            this.ambiance_CheckBox1.CheckedChanged += new Ambiance.Ambiance_CheckBox.CheckedChangedEventHandler(this.ambiance_CheckBox1_CheckedChanged);
             // 
             // ambiance_ControlBox1
             // 
@@ -136,10 +138,22 @@
             this.txtPass.Multiline = false;
             this.txtPass.Name = "txtPass";
             this.txtPass.ReadOnly = false;
-            this.txtPass.Size = new System.Drawing.Size(253, 33);
+            this.txtPass.Size = new System.Drawing.Size(253, 41);
             this.txtPass.TabIndex = 2;
             this.txtPass.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // ambiance_Label3
+            // 
+            this.ambiance_Label3.AutoSize = true;
+            this.ambiance_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ambiance_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label3.Location = new System.Drawing.Point(898, 126);
+            this.ambiance_Label3.Name = "ambiance_Label3";
+            this.ambiance_Label3.Size = new System.Drawing.Size(394, 48);
+            this.ambiance_Label3.TabIndex = 1;
+            this.ambiance_Label3.Text = "YÖNETİCİ PANELİ";
             // 
             // ambiance_Label1
             // 
@@ -163,22 +177,10 @@
             this.txt_username.Multiline = false;
             this.txt_username.Name = "txt_username";
             this.txt_username.ReadOnly = false;
-            this.txt_username.Size = new System.Drawing.Size(253, 33);
+            this.txt_username.Size = new System.Drawing.Size(253, 41);
             this.txt_username.TabIndex = 0;
             this.txt_username.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_username.UseSystemPasswordChar = false;
-            // 
-            // ambiance_Label3
-            // 
-            this.ambiance_Label3.AutoSize = true;
-            this.ambiance_Label3.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ambiance_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label3.Location = new System.Drawing.Point(898, 126);
-            this.ambiance_Label3.Name = "ambiance_Label3";
-            this.ambiance_Label3.Size = new System.Drawing.Size(394, 48);
-            this.ambiance_Label3.TabIndex = 1;
-            this.ambiance_Label3.Text = "YÖNETİCİ PANELİ";
             // 
             // Form1
             // 

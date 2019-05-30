@@ -62,8 +62,13 @@ namespace KalipServiceWCF
         [OperationContract]
         List<NumuneTariheGoreSatisOranları_Result> procAylikSatisOrani (string baslangic, string bitis);
 
-      
- 
+        [OperationContract]
+        Uye HatirlasinMi();
+
+
+        [OperationContract]
+        void HatirlaChecked(bool a);
+
     }
 
 

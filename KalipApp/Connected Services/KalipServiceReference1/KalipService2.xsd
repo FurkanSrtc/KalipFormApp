@@ -205,4 +205,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="HatirlasinMi">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HatirlasinMiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/KalipServiceWCF" minOccurs="0" name="HatirlasinMiResult" nillable="true" type="q13:Uye" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HatirlaChecked">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="a" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HatirlaCheckedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

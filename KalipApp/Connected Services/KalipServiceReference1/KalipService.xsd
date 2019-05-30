@@ -75,4 +75,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="NumuneTariheGoreSatisOranları_Result" nillable="true" type="tns:NumuneTariheGoreSatisOranları_Result" />
+  <xs:complexType name="Uye">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeniHatirla" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Uye" nillable="true" type="tns:Uye" />
 </xs:schema>

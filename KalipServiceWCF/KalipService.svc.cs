@@ -175,6 +175,34 @@ namespace KalipServiceWCF
             return db.NumuneTariheGoreSatisOranları(Convert.ToDateTime(baslangic), Convert.ToDateTime(bitis)).ToList();
         }
 
-      
+        public Uye HatirlasinMi()
+        {
+
+            Uye uye=db.Uye.FirstOrDefault();
+            if (uye.BeniHatirla==true)
+            {
+                return uye;
+            }
+          else
+            {
+                uye.UserName = "";
+                uye.Password = "";
+                return uye;
+            }
+
+        }
+
+        public void HatirlaChecked(bool a)
+        {
+
+            Uye uye = db.Uye.FirstOrDefault();
+            if (a == false)
+            {
+                uye.BeniHatirla = false;
+            }
+            else uye.BeniHatirla = true;
+
+            db.SaveChanges();
+        }
     }
 }
